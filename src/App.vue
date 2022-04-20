@@ -11,7 +11,7 @@
     <div id="stage" ref="stage">
 
     <img src="https://co.stci.uk/sites/all/themes/stcico/img/stc_logo.svg" alt="Cambodia" height="30" @click.self="showSettings = true">
-      <h2>Lucky Draw</h2>
+      <h2>Random Picker</h2>
       <div id="display">
         <div id="winners" ref="winners">
           <name-label
