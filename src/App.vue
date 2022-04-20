@@ -10,7 +10,7 @@
   >
     <div id="stage" ref="stage">
 
-    <img src="https://co.stci.uk/sites/all/themes/stcico/img/stc_logo.svg" alt="Cambodia" height="30">
+    <img src="https://co.stci.uk/sites/all/themes/stcico/img/stc_logo.svg" alt="Cambodia" height="30" @click.self="showSettings = true">
       <h2>Lucky Draw</h2>
       <div id="display">
         <div id="winners" ref="winners">
@@ -125,7 +125,7 @@
       <h2 class="empty" v-if="!logs.length">Haven't draw a lottery yet</h2>
     </div>
     <div id="settings" :class="{show: showSettings, modal: true}" tabindex="-1" @click.self="showSettings = false"  @keydown.esc="showSettings = false" >
-      <h2>SETTING</h2>
+      <h2>Settings</h2>
       <form>
         <p><label><span class="label">Intervals</span><input type="number" v-model.number="cooldown"><span class="tip">millisecond</span></label></p>
         <p><label><span class="label">expression</span><input type="text" class="hero" v-model="emojis"></label></p>
@@ -262,7 +262,7 @@ export default {
         this.rolling = setInterval(() => {
           this.shuffle(count)
           this.fit()
-        }, 1000 / 15)
+        }, 450 / 15)
         this.focus('begin')
       } else {
         this.candidates.splice(0, count)
